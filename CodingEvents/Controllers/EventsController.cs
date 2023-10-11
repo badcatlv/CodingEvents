@@ -4,11 +4,16 @@ namespace CodingEvents.Controllers
 {
     public class EventsController : Controller
     {
+        static private List<string> Events = new List<string>
+            {
+                "One",
+                "Two",
+                "Three"
+            };
         [HttpGet]
         public IActionResult Index()
         {
-            List<string> Events = new()
-            { "Wedding", "Birthday", "Funeral" };
+            
             ViewBag.events = Events;
             return View();
         }
@@ -17,6 +22,15 @@ namespace CodingEvents.Controllers
         public IActionResult Add()
         {
             return View();
+        }
+
+        [HttpPost]
+        [Route("/Events/Add")]
+        public IActionResult NewEvent(string name)
+        {
+            Events.Add(name);
+            
+            return Redirect("/Events");
         }
     }
 }
