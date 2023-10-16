@@ -3,18 +3,39 @@
 *@
 @{
 }
-<ul>
-    @foreach (string milestone in ViewBag.events)
-    {
-        <li>
-            @milestone
-        </li>
-    }
-</ul>
+
+<h1>Coding Events</h1>
+
 <p>
     <a asp-controller="Events" asp-action="Add">Add Event</a>
 </p>
+
 @if(ViewBag.events.Count == 0)
 {
     <p>No events yet!</p>
+} 
+else
+{
+    <table class="table">
+        <tr> 
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
+        @foreach (var evt in ViewBag.events)
+        {
+            <tr>
+                <td>@evt.ID</td>
+                <td>@evt.Name</td>
+                <td>@evt.Description</td>
+            </tr>
+        }
+    </table>
+
 }
