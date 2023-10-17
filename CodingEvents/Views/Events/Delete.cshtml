@@ -7,7 +7,7 @@
 <form method="post"> 
     @foreach(var evt in ViewBag.events)
     {
-        <div class="form-group">
+        <div class="form-control">
             <label>
                 <span>@evt.Name</span>
                 <input type="checkbox" name="eventIds" value="@evt.ID" />
