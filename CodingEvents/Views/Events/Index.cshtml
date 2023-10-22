@@ -34,6 +34,9 @@ else
                 <td>@evt.ID</td>
                 <td>@evt.Name</td>
                 <td>@evt.Description</td>
+                <td>
+                    <a asp-controller="Events" asp-action="Edit" asp-route-id="@evt.ID">Edit Event</a>
+                </td>
             </tr>
         }
     </table>
