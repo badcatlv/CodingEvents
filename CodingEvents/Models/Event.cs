@@ -6,6 +6,7 @@ namespace CodingEvents.Models
     {
         public string? Name { get; set; }
         public string? Description { get; set; }
+        public string? ContactEmail { get; set; }
         public int ID { get; set; }
         static private int nextID = 1;
 
@@ -16,10 +17,11 @@ namespace CodingEvents.Models
         }
 
 
-        public Event(string name, string description)
+        public Event(string name, string description, string contactEmail)
         {
             Name = name;
             Description = description;
+            ContactEmail = contactEmail;
             ID = nextID;
             nextID++;
         }
