@@ -3,17 +3,23 @@
 *@
 @{
 }
+@using CodingEvents.ViewModels
+@model AddEventViewModel
+
+
 <h1>Add Event</h1>
-<form method="post">
+<form asp-controller="Events" asp-action="Add" method="post">
     <div class="form-control">
-        <label>
+        <label asp-for="Name">
             Name
-            <input type="text" name="name" />
         </label>
-        <label>
+        <input asp-for="Name" />
+    </div>
+    <div class="form-control">
+        <label asp-for="Description">
             Description
-            <input type="text" name="description"
         </label>
+        <input asp-for="Description" />        
     </div>
     <input type="submit" value="Add Event" />
 </form>
