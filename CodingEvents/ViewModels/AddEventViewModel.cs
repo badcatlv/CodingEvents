@@ -12,7 +12,7 @@ namespace CodingEvents.ViewModels
         [StringLength(500, ErrorMessage = "Description cannot exceed 100 characters")]
         public string? Description { get; set; }
 
-        [EmailAddress(ErrorMessage ="Invalid Email.")]
+        [EmailAddress]
         public string? ContactEmail { get; set; }
     }
 }

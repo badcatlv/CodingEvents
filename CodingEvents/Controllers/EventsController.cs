@@ -36,7 +36,6 @@ namespace CodingEvents.Controllers
             }
             else
             {
-
                 return Redirect("/Events/Add");
             }
         }
