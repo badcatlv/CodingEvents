@@ -11,13 +11,12 @@ namespace CodingEvents.Models
         public string Location { get; set; }
 
         public int? NumberOfAttendees { get; set; }
-        public int ID { get; set; }
-        static private int nextID = 1;
+        public int Id { get; set; }
+       
 
         public Event() 
         {
-            ID = nextID;
-            nextID++;
+           
         }
 
 
@@ -28,8 +27,7 @@ namespace CodingEvents.Models
             ContactEmail = contactEmail;
             Location = location;
             NumberOfAttendees = numberOfAttendees;
-            ID = nextID;
-            nextID++;
+            
         }
 
         public override string ToString()
@@ -39,12 +37,12 @@ namespace CodingEvents.Models
 
         public override bool Equals(object? obj)
         {
-            return obj is Event @event && ID == @event.ID;
+            return obj is Event @event && Id == @event.Id;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(ID);
+            return HashCode.Combine(Id);
         }
     }
 }
