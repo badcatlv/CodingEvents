@@ -71,11 +71,9 @@ namespace CodingEvents.Controllers
 
         [HttpGet]
         [Route("/Events/Edit/{eventID}")]
-        public IActionResult Edit(int eventID)
+        public IActionResult Edit()
         {
-            Event? editEvent = context.Events.Find(eventID);
-            ViewBag.eventToEdit = editEvent;
-            ViewBag.title = "Edit Event" + editEvent.Name + "(id = " + editEvent.Id + ")";
+            ViewBag.eventToEdit = context.Events.ToList();
             return View();
         }
 
