@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CodingEvents.Models
+﻿namespace CodingEvents.Models
 {
     public class Event
     {
@@ -12,11 +10,11 @@ namespace CodingEvents.Models
 
         public int? NumberOfAttendees { get; set; }
         public int Id { get; set; }
-       
 
-        public Event() 
+
+        public Event()
         {
-           
+
         }
 
 
@@ -27,7 +25,7 @@ namespace CodingEvents.Models
             ContactEmail = contactEmail;
             Location = location;
             NumberOfAttendees = numberOfAttendees;
-            
+
         }
 
         public override string ToString()

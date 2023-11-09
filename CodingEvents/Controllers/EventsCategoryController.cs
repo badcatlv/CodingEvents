@@ -2,6 +2,7 @@
 using CodingEvents.Models;
 using Microsoft.AspNetCore.Mvc;
 using CodingEvents.ViewModels;
+using System.Xml.Linq;
 
 
 namespace CodingEvents.Controllers
@@ -18,6 +19,32 @@ namespace CodingEvents.Controllers
         {
             List<EventCategory> categories = context.Categories.ToList();
             return View(categories);
+        }
+
+        [HttpGet]
+        public IActionResult Create() 
+        {
+            AddEventCategoryViewModel addEventCategoryViewModel = new AddEventCategoryViewModel();
+            return View(addEventCategoryViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Create(AddEventCategoryViewModel addEventCategoryViewModel) 
+        {
+            if (ModelState.IsValid) 
+            { 
+                EventCategory eventCategory = new EventCategory
+                {
+                    Name = addEventCategoryViewModel.Name,
+                };
+                context.Categories.Add(eventCategory);
+                context.SaveChanges();
+                return Redirect("/EventsCategory");
+            }
+            else
+            {
+                return Redirect("/EventsCategory");
+            }
         }
     }
 }

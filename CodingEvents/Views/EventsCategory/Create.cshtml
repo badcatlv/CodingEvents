@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using CodingEvents.ViewModels
+@model AddEventCategoryViewModel
+
+<h1>Create Event Category</h1>
+<form asp-controller="EventsCategory" asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Name">
+            Category Name
+        </label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Create Category"
+</form>
