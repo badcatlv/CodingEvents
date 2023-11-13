@@ -22,7 +22,7 @@ namespace CodingEvents.Controllers
         }
 
         [HttpGet]
-        [Route("EventCategory/Create")]
+        //[Route("EventCategory/Create")]
         public IActionResult Create() 
         {
             AddEventCategoryViewModel addEventCategoryViewModel = new AddEventCategoryViewModel();
