@@ -22,6 +22,7 @@ namespace CodingEvents.Controllers
         }
 
         [HttpGet]
+        [Route("EventCategory/Create")]
         public IActionResult Create() 
         {
             AddEventCategoryViewModel addEventCategoryViewModel = new AddEventCategoryViewModel();
@@ -41,10 +42,11 @@ namespace CodingEvents.Controllers
                 context.SaveChanges();
                 return Redirect("/EventsCategory");
             }
-            else
-            {
-                return Redirect("/EventsCategory");
-            }
+            return View("Create", addEventCategoryViewModel);
+            //else
+            //{
+            //    return Redirect("/EventsCategory");
+            //}
         }
     }
 }

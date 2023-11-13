@@ -1,14 +1,14 @@
-﻿namespace CodingEvents.Models
+﻿using System.Diagnostics;
+
+namespace CodingEvents.Models
 {
     public class Event
     {
         public string? Name { get; set; }
         public string? Description { get; set; }
         public string? ContactEmail { get; set; }
-
-        public string Location { get; set; }
-
-        public int? NumberOfAttendees { get; set; }
+        public EventType type { get; set; }
+        
         public int Id { get; set; }
 
 
@@ -18,13 +18,12 @@
         }
 
 
-        public Event(string name, string description, string contactEmail, string location, int numberOfAttendees)
+        public Event(string name, string description, string contactEmail)
         {
             Name = name;
             Description = description;
             ContactEmail = contactEmail;
-            Location = location;
-            NumberOfAttendees = numberOfAttendees;
+            
 
         }
 

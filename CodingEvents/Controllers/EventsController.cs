@@ -38,17 +38,17 @@ namespace CodingEvents.Controllers
                     Name = addEventViewModel.Name,
                     Description = addEventViewModel.Description,
                     ContactEmail = addEventViewModel.ContactEmail,
-                    Location = addEventViewModel.Location,
-                    NumberOfAttendees = addEventViewModel.NumberOfAttendees,
+                    
                 };
                 context.Events.Add(newEvent);
                 context.SaveChanges();
                 return Redirect("/Events");
             }
-            else
-            {
-                return Redirect("/Events/Add");
-            }
+            return View(addEventViewModel);
+            //else
+            //{
+            //    return Redirect("/Events/Add");
+            //}
         }
 
         public IActionResult Delete()
